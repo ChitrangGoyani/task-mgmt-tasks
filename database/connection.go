@@ -15,7 +15,7 @@ type MongoInstance struct {
 }
 
 var dbName = "trial"
-var mg MongoInstance
+var MG = MongoInstance{}
 
 func Connect() error {
 	mongoPass := os.Getenv("MONGO_USER_PASS")
@@ -28,10 +28,8 @@ func Connect() error {
 	}
 	defer context.WithCancel(context.TODO())
 	db := client.Database(dbName)
-	mg = MongoInstance{
-		Client: client,
-		Db:     db,
-	}
+	MG.Client = client
+	MG.Db = db
 
 	return nil
 }

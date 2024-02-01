@@ -9,11 +9,10 @@ import (
 )
 
 func main() {
-	app := fiber.New()
-	routes.Setup(app)
-	// connect to mongo
 	if err := database.Connect(); err != nil {
 		log.Fatal(err)
 	}
+	app := fiber.New()
+	routes.Setup(app)
 	app.Listen(":8080")
 }
