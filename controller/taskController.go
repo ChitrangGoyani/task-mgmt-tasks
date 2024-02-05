@@ -66,8 +66,8 @@ func UpdateTask(c *fiber.Ctx) error {
 			{Key: "userID", Value: task.UserID},
 			{Key: "priority", Value: task.Priority},
 			{Key: "content", Value: task.Content},
-			{Key: "time", Value: task.Time},
-			{Key: "updatedTime", Value: task.UpdatedTime},
+			// {Key: "time", Value: task.Time},
+			// {Key: "updatedTime", Value: task.UpdatedTime},
 			{Key: "done", Value: task.Done},
 		},
 	}}
