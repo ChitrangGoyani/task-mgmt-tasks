@@ -6,9 +6,10 @@ import (
 )
 
 func Setup(app *fiber.App) {
-	app.Group("/api")
-	app.Get("/tasks", controller.GetTasks)
-	app.Post("/createTask", controller.CreateTask)
-	app.Put("/updateTask/:id", controller.UpdateTask)
-	app.Delete("/deleteTask/:id", controller.DeleteTask)
+	api := app.Group("/api")
+	api.Get("/tasks", controller.GetTasks)
+	api.Post("/createTask", controller.CreateTask)
+	api.Put("/updateTask/:id", controller.UpdateTask)
+	api.Delete("/deleteTask/:id", controller.DeleteTask)
+	api.Get("/searchTask/:content", controller.SearchTask)
 }
